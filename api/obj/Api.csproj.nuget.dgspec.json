@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\Api\\Api.csproj": {}
+    "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\Api\\Api.csproj": {
+    "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\Api\\Api.csproj",
+        "projectPath": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\api\\Api.csproj",
         "packagesPath": "C:\\Users\\henri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\Api\\obj\\",
+        "outputPath": "C:\\Users\\henri\\Desktop\\C# Mastering\\TreinoFacil\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\henri\\AppData\\Roaming\\NuGet\\NuGet.Config"
