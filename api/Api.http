@@ -1,6 +1,11 @@
 @Api_HostAddress = http://localhost:5014
 
-GET {{Api_HostAddress}}/weatherforecast/
-Accept: application/json
+GET {{Api_HostAddress}}/api/Alunos
+
+POST {{Api_HostAddress}}/api/Alunos
+Content-Type: application/json
+
+{ "nome": "Maria Souza", "telefone": "71999990000", "objetivo": "Hipertrofia" }
+
 
 ###
