@@ -2,18 +2,25 @@
 
 GET {{Api_HostAddress}}/api/Alunos
 
+###
 POST {{Api_HostAddress}}/api/Alunos
 Content-Type: application/json
 
 { "nome": "Mario Ayala", "telefone": "11988880000", "objetivo": "Saúde e Qualidade de vida" }
 
+###
 GET {{Api_HostAddress}}/api/Alunos/1
 
+###
 PUT {{Api_HostAddress}}/api/Alunos/1
+Content-Type: application/json
+
 { "nome": "Mario Ayala", "telefone": "11988881111", "objetivo": "Hipertrofia" }
 
+###
 DELETE {{Api_HostAddress}}/api/Alunos/1
 
+###
 POST {{Api_HostAddress}}/api/Alunos
 Content-Type: application/json
 
