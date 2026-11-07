@@ -5,7 +5,8 @@ GET {{Api_HostAddress}}/api/Alunos
 POST {{Api_HostAddress}}/api/Alunos
 Content-Type: application/json
 
-{ "nome": "Maria Souza", "telefone": "71999990000", "objetivo": "Hipertrofia" }
+{ "nome": "Mario Ayala", "telefone": "11988880000", "objetivo": "Saúde e Qualidade de vida" }
 
+GET {{Api_HostAddress}}/api/Alunos/1
 
 ###
