@@ -31,5 +31,18 @@ public class AlunosController : ControllerBase
         return aluno is null ? NotFound() : Ok(aluno);
     }
 
-    
+    [HttpPost]
+    public async Task<ActionResult<Aluno>> Criar(AlunoRequest request)
+    {
+        var aluno = new Aluno
+        {
+            Nome = request.Nome,
+            Telefone = request.Telefone,
+            Objetivo = request.Objetivo
+        };
+
+        _db.Alunos.Add(aluno);
+        await _db.SaveChangesAsync();
+        return CreatedAtAction(nameof(ObterPorId), new { id = aluno.Id }, aluno);
+    }
 }
