@@ -45,4 +45,21 @@ public class AlunosController : ControllerBase
         await _db.SaveChangesAsync();
         return CreatedAtAction(nameof(ObterPorId), new { id = aluno.Id }, aluno);
     }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Atualizar(int id, AlunoRequest request)
+    {
+        var aluno = await _db.Alunos.FindAsync(id);
+        
+        if (aluno is null)
+            return NotFound();
+
+        aluno.Nome = request.Nome;
+        aluno.Telefone = request.Telefone;
+        aluno.Objetivo = request.Objetivo;
+        aluno.AlteradoEm = DateTime.UtcNow;
+        
+        await _db.SaveChangesAsync();
+        return NoContent();
+    } 
 }
