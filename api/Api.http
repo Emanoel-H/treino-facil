@@ -9,4 +9,8 @@ Content-Type: application/json
 
 GET {{Api_HostAddress}}/api/Alunos/1
 
+
+PUT {{Api_HostAddress}}/api/Alunos/1
+{ "nome": "Mario Ayala", "telefone": "11988881111", "objetivo": "Hipertrofia" }
+
 ###
