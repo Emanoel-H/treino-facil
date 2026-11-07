@@ -64,7 +64,7 @@ public class AlunosController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult<>> Deletar(int id)
+    public async Task<IActionResult> Deletar(int id)
     {
         var aluno = await _db.Alunos.FindAsync(id);
         
