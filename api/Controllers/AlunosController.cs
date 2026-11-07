@@ -61,5 +61,18 @@ public class AlunosController : ControllerBase
         
         await _db.SaveChangesAsync();
         return NoContent();
-    } 
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult<>> Deletar(int id)
+    {
+        var aluno = await _db.Alunos.FindAsync(id);
+        
+        if (aluno is null)
+            return NotFound();
+
+        _db.Alunos.Remove(aluno);
+        await _db.SaveChangesAsync();
+        return NoContent();
+    }
 }
