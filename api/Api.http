@@ -13,3 +13,9 @@ PUT {{Api_HostAddress}}/api/Alunos/1
 { "nome": "Mario Ayala", "telefone": "11988881111", "objetivo": "Hipertrofia" }
 
 DELETE {{Api_HostAddress}}/api/Alunos/1
+
+POST {{Api_HostAddress}}/api/Alunos
+Content-Type: application/json
+
+{ "nome": "", "telefone": "11988880000", "objetivo": "Emagrecimento" }
+
