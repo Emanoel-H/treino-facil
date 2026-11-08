@@ -21,5 +21,22 @@ public class AppDbContext : DbContext
             e.Property(a => a.Telefone).HasMaxLength(20);
             e.Property(a => a.Objetivo).HasMaxLength(200);
         });
+
+        modelBuilder.Entity<Treino>(e =>
+        {
+            e.Property(t => t.Nome).IsRequired().HasMaxLength(120);
+            e.Property(t => t.Descricao).HasMaxLength(300);
+            
+            e.HasOne(t => t.Aluno)
+                .WithMany()
+                .HasForeignKey(t => t.AlunoId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
+            
+            e.HasMany(t => t.Exercicios)
+                .WithOne(x => x.Treino)
+                .HasForeignKey(x => x.TreinoId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
     }
 }
