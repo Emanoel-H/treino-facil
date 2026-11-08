@@ -38,5 +38,11 @@ public class AppDbContext : DbContext
                 .HasForeignKey(x => x.TreinoId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
+
+        modelBuilder.Entity<Exercicio>(e =>
+        {
+            e.Property(a => a.Nome).IsRequired().HasMaxLength(120);
+            e.Property(a => a.Repeticoes).HasMaxLength(60);
+        });
     }
 }
