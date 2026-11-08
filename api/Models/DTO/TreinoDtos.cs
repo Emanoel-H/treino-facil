@@ -29,3 +29,5 @@ public class TreinoRequest
 
     public List<ExercicioRequest> Exercicios { get; set; } = new();
 }
+
+public record ExercicioResponse(int Id, string Nome, int Series, string? Repeticoes, int Ordem);
