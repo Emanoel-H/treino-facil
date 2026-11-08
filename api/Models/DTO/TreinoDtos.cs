@@ -31,3 +31,5 @@ public class TreinoRequest
 }
 
 public record ExercicioResponse(int Id, string Nome, int Series, string? Repeticoes, int Ordem);
+
+public record  TreinoResponse(int Id, string Nome, int AlunoId, string AlunoNome, string? Descricao, List<Exercicio> Exercicios);
