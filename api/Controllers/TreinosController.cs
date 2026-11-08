@@ -6,7 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers;
 
-public class TreinosController
+[ApiController]
+[Route("api/[controller]")]
+public class TreinosController : ControllerBase
 {
-    
+    private readonly AppDbContext _db;
+    public TreinosController(AppDbContext db) => _db = db;
+
 }
