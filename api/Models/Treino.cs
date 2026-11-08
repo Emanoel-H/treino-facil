@@ -9,4 +9,5 @@ public class Treino
     public string? Descricao { get; set; }
     public DateTime CriadoEm { get; set; } =  DateTime.UtcNow;
     public DateTime AlteradoEm { get; set; } =  DateTime.UtcNow;
+    public List<Exercicio> Exercicios { get; set; } = new();
 }
