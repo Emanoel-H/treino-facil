@@ -70,6 +70,27 @@ public class TreinosController : ControllerBase
         await _db.Treinos.Entry(treino).Reference(t => t.Aluno).LoadAsync();
         return CreatedAtAction(nameof(ObterPorId), new { id = treino.Id }, ToResponse(treino));
     }
-    
-    
+
+    public async Task<IActionResult> Atualizar(int id, TreinoRequest request)
+    {
+        var treino = await _db.Treinos.AsNoTracking()
+            .Include(t => t.Exercicios)
+            .FirstOrDefaultAsync(t => t.Id == id);
+
+        if ((treino is null)) return NotFound();
+        
+        if (!await _db.Alunos.AnyAsync(a => a.Id == request.AlunoId))
+            return BadRequest(new { erro = "Aluno não encontrado" });
+
+        treino.AlunoId = request.AlunoId;
+        treino.Nome = request.Nome;
+        treino.Descricao = request.Descricao;
+        treino.AlteradoEm = DateTime.UtcNow;
+        
+        _db.Exercicios.RemoveRange(treino.Exercicios);
+        treino.Exercicios = request.Exercicios.Select(ToEntity).ToList();
+        
+        await _db.SaveChangesAsync();
+        return NoContent();
+    }
 }
