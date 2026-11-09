@@ -172,22 +172,7 @@ Resposta `201 Created`:
 - **`AsNoTracking()` nas consultas de leitura**, e `Include` para carregar aluno e exercícios sem consultas extras.
 - **Front-end sem injeção de HTML:** os dados da API são inseridos com `.text()` do jQuery, o que evita XSS.
 
-## Roadmap
-
-- [x] CRUD de alunos
-- [x] CRUD de treinos e exercícios (relacionamento 1:N)
-- [x] Front-end com Bootstrap + jQuery: tela de alunos
-- [ ] Front-end com Bootstrap + jQuery: tela de treinos
-- [ ] Painel em React + TypeScript
-- [ ] Autenticação com JWT
-- [ ] Testes automatizados (xUnit)
-- [ ] Agenda de aulas
-
-## Capturas de tela
-
-_Adicione aqui prints do Api.http e das telas do front-end (pasta `docs/`)._
-
 ## Autor
 
 **Emanoel Henrique**
-GitHub: [SEU_USUARIO](https://github.com/SEU_USUARIO) · LinkedIn: [seu-perfil](https://www.linkedin.com/in/seu-perfil)
+GitHub: [SEU_USUARIO](https://github.com/Emanoel-H) · LinkedIn: [seu-perfil](https://www.linkedin.com/in/emanoel-henrique-pereira-santana-7b6630273/)
