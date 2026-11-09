@@ -18,4 +18,9 @@ public class TreinosController : ControllerBase
     t.Exercicios.OrderBy(x => x.Ordem)
         .Select(x => new ExercicioResponse(x.Id, x.Nome, x.Series, x.Repeticoes, x.Ordem))
         .ToList());
+
+    private static Exercicio ToEntity(ExercicioRequest request) => new()
+    {
+        Nome = request.Nome, Series = request.Series, Repeticoes = request.Repeticoes, Ordem = request.Ordem
+    };
 }
