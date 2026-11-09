@@ -33,7 +33,7 @@ Content-Type: application/json
 {
   "alunoId": 3,
   "nome": "A - Peito e Tríceps",
-  "observacoes": "Descanso de 2-3 min entre as séries",
+  "descricao": "Descanso de 2-3 min entre as séries",
   "exercicios": [
     { "nome": "Supino reto", "series": 3, "repeticoes": "Até a falha", "ordem": 1 },
     { "nome": "Tríceps corda", "series": 3, "repeticoes": "10-12", "ordem": 2 }
@@ -50,7 +50,7 @@ Content-Type: application/json
 {
   "alunoId": 3,
   "nome": "B - Perna",
-  "observacoes": "Descanso de 2-3 min entre as séries",
+  "descricao": "Descanso de 2-3 min entre as séries",
   "exercicios": [
     { "nome": "Stiff", "series": 3, "repeticoes": "Até a falha", "ordem": 1 },
     { "nome": "Cadeira extenssora", "series": 3, "repeticoes": "10-12", "ordem": 2 }
@@ -67,7 +67,7 @@ Content-Type: application/json
 {
   "alunoId": 9999,
   "nome": "Teste",
-  "observacoes": "...",
+  "descricao": "...",
   "exercicios": []
 }
 
