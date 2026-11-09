@@ -98,9 +98,7 @@ public class TreinosController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Deletar(int id)
     {
-        var treino = await _db.Treinos.AsNoTracking()
-            .Include(t => t.Exercicios)
-            .FirstOrDefaultAsync(t => t.Id == id);
+        var treino = await _db.Treinos.FindAsync(id);
 
         if ((treino is null)) 
             return NotFound();
