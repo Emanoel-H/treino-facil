@@ -42,3 +42,17 @@ Content-Type: application/json
 
 ###
 GET {{Api_HostAddress}}/api/Treinos
+
+###
+POST {{Api_HostAddress}}/api/Treinos
+Content-Type: application/json
+
+{
+  "alunoId": 3,
+  "nome": "B - Perna",
+  "observacoes": "Descanso de 2-3 min entre as séries",
+  "exercicios": [
+    { "nome": "Stiff", "series": 3, "repeticoes": "Até a falha", "ordem": 1 },
+    { "nome": "Cadeira extenssora", "series": 3, "repeticoes": "10-12", "ordem": 2 }
+  ]
+}
