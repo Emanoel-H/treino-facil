@@ -38,6 +38,14 @@ public class TreinosController : ControllerBase
         var treinos = await query.OrderBy(t => t.Nome).ToListAsync();
         return treinos.Select(ToResponse).ToList();
     }
-    
-    
+
+    public async Task<ActionResult<TreinoResponse>> ObterPorId(int id)
+    {
+        var treino = await _db.Treinos.AsNoTracking()
+            .Include(t => t.Aluno)
+            .Include(t => t.Exercicios)
+            .FirstOrDefaultAsync(t => t.Id == id);
+        
+        return treino is null ? NotFound() : ToResponse(treino);
+    }
 }
