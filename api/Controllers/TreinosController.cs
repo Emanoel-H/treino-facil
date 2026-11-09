@@ -49,6 +49,27 @@ public class TreinosController : ControllerBase
         
         return treino is null ? NotFound() : ToResponse(treino);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<TreinoResponse>> Criar(TreinoRequest request)
+    {
+        if (!await _db.Alunos.AnyAsync(a => a.Id == request.AlunoId))
+            return BadRequest(new { erro = "Aluno não encontrado" });
+
+        var treino = new Treino
+        {
+            AlunoId = request.AlunoId,
+            Nome = request.Nome,
+            Descricao = request.Descricao,
+            Exercicios = request.Exercicios.Select(ToEntity).ToList()
+        };
+
+        _db.Treinos.Add(treino);
+        await _db.SaveChangesAsync();
+
+        await _db.Treinos.Entry(treino).Reference(t => t.Aluno).LoadAsync();
+        return CreatedAtAction(nameof(ObterPorId), new { id = treino.Id }, ToResponse(treino));
+    }
     
     
 }
