@@ -70,3 +70,6 @@ Content-Type: application/json
   "observacoes": "...",
   "exercicios": []
 }
+
+###
+DELETE {{Api_HostAddress}}/api/Treinos/1
