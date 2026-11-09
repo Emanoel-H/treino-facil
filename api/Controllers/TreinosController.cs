@@ -94,4 +94,20 @@ public class TreinosController : ControllerBase
         await _db.SaveChangesAsync();
         return NoContent();
     }
+    
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Deletar(int id)
+    {
+        var treino = await _db.Treinos.AsNoTracking()
+            .Include(t => t.Exercicios)
+            .FirstOrDefaultAsync(t => t.Id == id);
+
+        if ((treino is null)) 
+            return NotFound();
+        
+        _db.Treinos.Remove(treino);
+        
+        await _db.SaveChangesAsync();
+        return NoContent();
+    }
 }
