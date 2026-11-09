@@ -56,3 +56,6 @@ Content-Type: application/json
     { "nome": "Cadeira extenssora", "series": 3, "repeticoes": "10-12", "ordem": 2 }
   ]
 }
+
+###
+GET {{Api_HostAddress}}/api/Treinos?alunoId=3
