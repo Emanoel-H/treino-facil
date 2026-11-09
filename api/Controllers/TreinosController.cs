@@ -74,7 +74,7 @@ public class TreinosController : ControllerBase
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Atualizar(int id, TreinoRequest request)
     {
-        var treino = await _db.Treinos.AsNoTracking()
+        var treino = await _db.Treinos
             .Include(t => t.Exercicios)
             .FirstOrDefaultAsync(t => t.Id == id);
 

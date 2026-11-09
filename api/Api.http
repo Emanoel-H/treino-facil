@@ -72,4 +72,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{Api_HostAddress}}/api/Treinos/1
+DELETE {{Api_HostAddress}}/api/Treinos/4
