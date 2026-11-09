@@ -39,3 +39,6 @@ Content-Type: application/json
     { "nome": "Tríceps corda", "series": 3, "repeticoes": "10-12", "ordem": 2 }
   ]
 }
+
+###
+GET {{Api_HostAddress}}/api/Treinos
