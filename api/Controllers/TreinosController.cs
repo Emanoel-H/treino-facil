@@ -23,4 +23,21 @@ public class TreinosController : ControllerBase
     {
         Nome = request.Nome, Series = request.Series, Repeticoes = request.Repeticoes, Ordem = request.Ordem
     };
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<TreinoResponse>>> Listar([FromQuery] int? alunoId)
+    {
+        var query = _db.Treinos.AsNoTracking()
+            .Include(t => t.Aluno)
+            .Include(t => t.Exercicios)
+            .AsQueryable();
+
+        if (alunoId.HasValue)
+            query = query.Where(t => t.AlunoId == alunoId);
+
+        var treinos = await query.OrderBy(t => t.Nome).ToListAsync();
+        return treinos.Select(ToResponse).ToList();
+    }
+    
+    
 }
