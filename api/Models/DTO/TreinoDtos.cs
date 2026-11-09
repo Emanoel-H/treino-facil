@@ -8,13 +8,13 @@ public class ExercicioRequest
     public string Nome { get; set; } = "";
 
     [Range(1, 20)] 
-    public int Series;
+    public int Series { get; set; }
     
     [MaxLength(60)]
     public string? Repeticoes { get; set; }
     
     [Range(1, 20)] 
-    public int Ordem;
+    public int Ordem { get; set; }
 }
 public class TreinoRequest
 {
