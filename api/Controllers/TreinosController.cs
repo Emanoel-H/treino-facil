@@ -38,7 +38,8 @@ public class TreinosController : ControllerBase
         var treinos = await query.OrderBy(t => t.Nome).ToListAsync();
         return treinos.Select(ToResponse).ToList();
     }
-
+    
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<TreinoResponse>> ObterPorId(int id)
     {
         var treino = await _db.Treinos.AsNoTracking()
@@ -48,4 +49,6 @@ public class TreinosController : ControllerBase
         
         return treino is null ? NotFound() : ToResponse(treino);
     }
+    
+    
 }
