@@ -73,3 +73,19 @@ Content-Type: application/json
 
 ###
 DELETE {{Api_HostAddress}}/api/Treinos/4
+
+###
+PUT {{Api_HostAddress}}/api/Treinos/6
+Content-Type: application/json
+
+{
+  "alunoId": 3,
+  "nome": "B - Perna",
+  "descricao": "Descanso de 2-3 min entre as séries",
+  "exercicios": [
+    { "nome": "Stiff", "series": 3, "repeticoes": "Até a falha", "ordem": 1 },
+    { "nome": "Cadeira extenssora", "series": 3, "repeticoes": "10-12", "ordem": 2 },
+    { "nome": "Agachamento Livre", "series": 4, "repeticoes": "8-12", "ordem": 3 },
+    { "nome": "Agachamento Hack", "series": 3, "repeticoes": "Até a falha", "ordem": 4 }
+  ]
+}
