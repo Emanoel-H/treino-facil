@@ -70,7 +70,8 @@ public class TreinosController : ControllerBase
         await _db.Treinos.Entry(treino).Reference(t => t.Aluno).LoadAsync();
         return CreatedAtAction(nameof(ObterPorId), new { id = treino.Id }, ToResponse(treino));
     }
-
+    
+    [HttpPut("{id:int}")]
     public async Task<IActionResult> Atualizar(int id, TreinoRequest request)
     {
         var treino = await _db.Treinos.AsNoTracking()
