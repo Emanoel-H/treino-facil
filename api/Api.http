@@ -59,3 +59,14 @@ Content-Type: application/json
 
 ###
 GET {{Api_HostAddress}}/api/Treinos?alunoId=3
+
+###
+POST {{Api_HostAddress}}/api/Treinos
+Content-Type: application/json
+
+{
+  "alunoId": 9999,
+  "nome": "Teste",
+  "observacoes": "...",
+  "exercicios": []
+}
